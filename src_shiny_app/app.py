@@ -21,14 +21,14 @@ with ui.card(full_screen=True):
         angle = input.angle()
         velocity = input.velocity()
         height = input.height()
-        if (angle != "" and velocity != "" and height != ""):
-            velocity = int(velocity)
-            height = int(height)
-            angle = np.radians(int(angle))
+        if (angle != "" and velocity != "" and height != "" and float(height) >=0 ):
+            velocity = float(velocity)
+            height = float(height)
+            angle = np.radians(float(angle))
             time_of_flight = find_t(height, velocity, angle)[1]
         else:
             return plt.plot(0, 0)
-
+        #time_of_flight = 2 * velocity * np.sin(angle) / g
         time = np.linspace(0, time_of_flight, 100)
         x = velocity * np.cos(angle) * time
         y = height + velocity * np.sin(angle) * time - 0.5 * g * time**2
