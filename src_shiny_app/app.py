@@ -28,6 +28,7 @@ with ui.card(full_screen=True):
             time_of_flight = find_t(height, velocity, angle)[1]
         else:
             return plt.plot(0, 0)
+
         time = np.linspace(0, time_of_flight, 100)
         x = velocity * np.cos(angle) * time
         y = height + velocity * np.sin(angle) * time - 0.5 * g * time**2
