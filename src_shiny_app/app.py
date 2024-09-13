@@ -21,7 +21,7 @@ with ui.card(full_screen=True):
         angle = input.angle()
         velocity = input.velocity()
         height = input.height()
-        if (angle != "" and velocity != "" and height != "" and float(height) >=0 ):
+        if (angle != "" and velocity != "" and height != "" and int(height) >=0):
             velocity = float(velocity)
             height = float(height)
             angle = np.radians(float(angle))
